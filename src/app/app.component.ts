@@ -22,7 +22,7 @@ export class AppComponent {
     console.log("Button clicked!", event);
   }
 
-  onDivclicked()
+  onDivClicked()
   {
     console.log("DIV clicked!");
   }

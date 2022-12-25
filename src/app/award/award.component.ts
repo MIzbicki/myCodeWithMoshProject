@@ -11,5 +11,5 @@ export class AwardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  isAward: boolean = false;
 }

@@ -28,7 +28,7 @@
 <br>
 <table>
   <tr>
-    <td [attr.colspan] = "colSpan"></td><!-- colspan is known attribute of DOM, so we have to create this attribute adding attr.xxx -->
+    <td [attr.colspan] = "colSpan"></td><!-- colspan is unknown attribute of DOM, so we have to create this attribute adding attr.xxx -->
   </tr>
 </table>
 <br>
@@ -41,7 +41,7 @@
 <br>
 
 <!-- to event binding we use () -->
-<div (click)="onDivclicked()">
+<div (click)="onDivClicked()">
   <button (click)="onSave($event)">Save</button>
 </div><br>
 
@@ -56,6 +56,7 @@ Getting value from input<br>
 <!-- instead we should use two-way binding:-->
 Two-way binding<br>
 <input [(ngModel)]="email2" (keyup.enter)="onKeyUp()"/><br><br>
+
 
 Build-in Pipes:<br>
 Title: {{course.title | lowercase | uppercase }}<br>
