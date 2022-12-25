@@ -12,4 +12,10 @@ export class AwardComponent implements OnInit {
   ngOnInit(): void {
   }
   isAward: boolean = false;
+
+  awardStateChange()
+  {
+    this.isAward = !this.isAward;
+    console.log(this.isAward);
+  }
 }
