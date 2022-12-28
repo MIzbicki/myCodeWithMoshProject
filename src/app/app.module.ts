@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AwardComponent } from './award/award.component';
 import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
+import { MyTitleCasePipe } from './my-title-case.pipe';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
     MyPipe,
     AwardComponent,
     MyTitleCaseComponent,
+    MyTitleCasePipe,
   ],
   imports: [
     BrowserModule,

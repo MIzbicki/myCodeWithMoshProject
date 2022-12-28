@@ -12,4 +12,6 @@ export class MyTitleCaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myTitle: string = "";
+
 }
