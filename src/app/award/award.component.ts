@@ -16,6 +16,5 @@ export class AwardComponent implements OnInit {
   awardStateChange()
   {
     this.isAward = !this.isAward;
-    console.log(this.isAward);
   }
 }

@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AwardComponent } from './award/award.component';
+import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyPipe,
-    AwardComponent
+    AwardComponent,
+    MyTitleCaseComponent,
   ],
   imports: [
     BrowserModule,

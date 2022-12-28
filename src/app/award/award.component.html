@@ -1,9 +1,15 @@
-<p>award works!</p>
-Test bootstrap icons
+Bootstrap icons
 <br>
-<!--
-  <i class="bi bi-award"></i>
--->
-  <button class="btn" (click)="awardStateChange()" [class]="(isAward)? 'bi-award-fill' : 'bi-award'"></button>
+<button
+class="btn"
+(click)="awardStateChange()"
+[class.bi-award-fill]="isAward"
+[class.bi-award]="!isAward">
+</button>
 
+<!-- this button works correctly
+<button class="btn"
+  (click)="awardStateChange()"
+  [class]="(isAward)? 'bi-award-fill' : 'bi-award'"></button>
+-->
 <br><br><br><br><br><br>
