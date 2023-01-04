@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-award',
@@ -11,10 +11,18 @@ export class AwardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  isAward: boolean = false;
+
+  @Input('award') isAward: boolean = false;
+  @Output('change') change = new EventEmitter;
 
   awardStateChange()
   {
     this.isAward = !this.isAward;
+    this.change.emit({firstValue: this.isAward});
   }
 }
+
+export interface MyAwardChangedEventArgs {
+  firstValue: boolean,
+}
+

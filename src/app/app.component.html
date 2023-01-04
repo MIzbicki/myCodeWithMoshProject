@@ -72,3 +72,7 @@ Custom pipes:<br>
 <app-award></app-award>
 <app-my-title-case></app-my-title-case>
 <br><br><br><br>
+
+<p>Input-output component properties</p>
+<app-award [award]="post.isAchieve" (change)="onAwardChanged($event)"></app-award>
+<!--        isAward - is public property of the award component -->
