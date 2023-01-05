@@ -11,5 +11,17 @@ export class TwitterLikeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isLiked: boolean = false;
+  likesNumber: number = 5;
+
+  likeClicked = () =>{
+    this.isLiked = !this.isLiked;
+
+    if(this.isLiked == true){
+      this.likesNumber ++;
+    }else{
+      this.likesNumber --;
+    }
+  }
 
 }

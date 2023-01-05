@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyTitleCasePipe } from '../my-title-case.pipe';
 
 @Component({
   selector: 'app-my-title-case',
