@@ -7,6 +7,7 @@ import { AwardComponent } from './award/award.component';
 import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
 import { MyTitleCasePipe } from './my-title-case.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { TwitterLikeComponent } from './twitter-like/twitter-like.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
     MyTitleCaseComponent,
     MyTitleCasePipe,
     BootstrapPanelComponent,
+    TwitterLikeComponent,
   ],
   imports: [
     BrowserModule,
