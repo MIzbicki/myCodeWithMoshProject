@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-twitter-like',
@@ -11,8 +11,9 @@ export class TwitterLikeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  isLiked: boolean = false;
-  likesNumber: number = 5;
+  @Input('twitterTitle') twitterTitle: string = "Twitter Title";
+  @Input('isLiked')  isLiked: boolean = false;
+  @Input('likesNumber') likesNumber: number = 0;
 
   likeClicked = () =>{
     this.isLiked = !this.isLiked;
