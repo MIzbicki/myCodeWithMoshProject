@@ -24,5 +24,10 @@ export class TwitterLikeComponent implements OnInit {
       this.likesNumber --;
     }
   }
+}
 
+export interface myTwitterPost{
+  title: string,
+  isLiked: boolean,
+  likesNumber: number
 }
