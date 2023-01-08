@@ -72,14 +72,6 @@ export class AppComponent {
     isLiked: false,
     likesNumber: 8
   }
-
-  //ngSwitch
-  viewMode: string = "list";
-  onNavClick(navName: string){
-    this.viewMode = navName;
-  }
-
-
 }
 
 

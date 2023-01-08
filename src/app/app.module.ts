@@ -8,6 +8,8 @@ import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
 import { MyTitleCasePipe } from './my-title-case.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { TwitterLikeComponent } from './twitter-like/twitter-like.component';
+import { NavNgSwitchComponent } from './nav-ng-switch/nav-ng-switch.component';
+import { MyNgForComponent } from './my-ng-for/my-ng-for.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { TwitterLikeComponent } from './twitter-like/twitter-like.component';
     MyTitleCasePipe,
     BootstrapPanelComponent,
     TwitterLikeComponent,
+    NavNgSwitchComponent,
+    MyNgForComponent,
   ],
   imports: [
     BrowserModule,
