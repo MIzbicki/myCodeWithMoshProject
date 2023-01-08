@@ -1,0 +1,8 @@
+<p>my-ng-for works!</p>
+<ul>
+  <li *ngFor="let course of courses; index as i; even as isEven">
+    id = {{ i }} - {{course.title}}
+    <button class="btn bi-trash-fill" (click)="onTrash(course)"></button>
+    <!-- <span *ngIf="isEven">(id is EVEN)</span> -->
+  </li>
+</ul>
