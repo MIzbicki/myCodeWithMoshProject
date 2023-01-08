@@ -1,1 +1,10 @@
-<p>twitter-like works!</p>
+{{twitterTitle}}
+<br>
+
+<span class="bi-heart-fill"
+[class.liked]="isLiked"
+[class.disliked]="!isLiked"
+(click)="likeClicked()"
+></span>
+
+<span>{{likesNumber}}</span>

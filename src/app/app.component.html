@@ -83,4 +83,35 @@ Custom pipes:<br>
   <div class="body">Test 2</div>
   <div class="footer">Test 3</div>
 </app-bootstrap-panel>
+<br><br>
 
+<app-twitter-like
+[twitterTitle]="twitterPost.title"
+[isLiked]="twitterPost.isLiked"
+[likesNumber]="twitterPost.likesNumber"
+></app-twitter-like>
+
+<br><br><br>
+ngIf
+<div *ngIf="true">This is div 1 </div>
+<div *ngIf="false">This is div 2 </div>
+
+<br><br><br>
+<ul class="nav nav-pills">
+  <li class="nav-item"
+  (click)="onNavClick('map')"
+  ><a href="#a" class="nav-link" [class.active]="viewMode == 'map'">Map view</a></li>
+  <li class="nav-item"
+  (click)="onNavClick('list')"
+  ><a href="#a" class="nav-link" [class.active]="viewMode == 'list'">List View</a></li>
+  <li class="nav-item"
+  (click)="onNavClick('other')"
+  ><a href="#a" class="nav-link" [class.active]="viewMode == 'other'">Other view</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">This is map view</div>
+  <div *ngSwitchCase="'list'">This is list view</div>
+  <div *ngSwitchCase="'other'">This is other view</div>
+  <div *ngSwitchDefault>This is default view</div>
+</div>

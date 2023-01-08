@@ -1,3 +1,4 @@
+import { myTwitterPost } from './twitter-like/twitter-like.component';
 import { Component } from '@angular/core';
 import { MyAwardChangedEventArgs } from './award/award.component';
 
@@ -64,6 +65,20 @@ export class AppComponent {
   onAwardChanged = (eventArgs: MyAwardChangedEventArgs) => {
       console.log("Award status changed and now is: ", eventArgs);
   }
+
+
+  twitterPost: myTwitterPost = {
+    title: 'Twitter post title!',
+    isLiked: false,
+    likesNumber: 8
+  }
+
+  //ngSwitch
+  viewMode: string = "list";
+  onNavClick(navName: string){
+    this.viewMode = navName;
+  }
+
 
 }
 
