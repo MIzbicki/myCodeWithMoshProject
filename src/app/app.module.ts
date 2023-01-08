@@ -10,6 +10,8 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
 import { TwitterLikeComponent } from './twitter-like/twitter-like.component';
 import { NavNgSwitchComponent } from './nav-ng-switch/nav-ng-switch.component';
 import { MyNgForComponent } from './my-ng-for/my-ng-for.component';
+import { MyInputFormatDirective } from './my-input-format.directive';
+import { MyDirectiveComponent } from './my-directive/my-directive.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { MyNgForComponent } from './my-ng-for/my-ng-for.component';
     TwitterLikeComponent,
     NavNgSwitchComponent,
     MyNgForComponent,
+    MyInputFormatDirective,
+    MyDirectiveComponent,
   ],
   imports: [
     BrowserModule,
