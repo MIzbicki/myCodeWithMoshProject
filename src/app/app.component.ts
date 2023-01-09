@@ -66,7 +66,6 @@ export class AppComponent {
       console.log("Award status changed and now is: ", eventArgs);
   }
 
-
   twitterPost: myTwitterPost = {
     title: 'Twitter post title!',
     isLiked: false,
