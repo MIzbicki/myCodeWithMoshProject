@@ -12,6 +12,7 @@ import { NavNgSwitchComponent } from './nav-ng-switch/nav-ng-switch.component';
 import { MyNgForComponent } from './my-ng-for/my-ng-for.component';
 import { MyInputFormatDirective } from './my-input-format.directive';
 import { MyDirectiveComponent } from './my-directive/my-directive.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MyDirectiveComponent } from './my-directive/my-directive.component';
     MyNgForComponent,
     MyInputFormatDirective,
     MyDirectiveComponent,
+    ZippyComponent,
   ],
   imports: [
     BrowserModule,

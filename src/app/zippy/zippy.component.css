@@ -1,0 +1,22 @@
+.zippy-heading, .zippy-body{
+  border: solid 1px black;
+  padding: 10px;
+  max-width: 600px;
+}
+
+.zippy-heading{
+  border-radius: 5px 5px 0px 0px;
+}
+
+.zippy-body{
+  border-radius: 0px 0px 5px 5px;
+}
+
+.btn{
+  padding: 0px 30px;
+}
+
+.bi-chevron-compact-down, .bi-chevron-compact-up{
+  font-weight: 700;
+  font-size: 20px;
+}
