@@ -1,0 +1,19 @@
+<div>
+  <div class="zippy-heading">
+    {{ title }}
+    <button class="btn float-end"
+    [ngClass]="{
+      'bi-chevron-compact-down': !isExtended,
+      'bi-chevron-compact-up': isExtended
+    }"
+    (click)="onExtended()"
+    data-toggle="collapse"
+    ></button>
+  </div>
+  <div class="zippy-body"
+  [ngClass]="{
+    'collapse': !isExtended
+  }">
+    <ng-content select=".innerText"></ng-content>
+  </div>
+</div>
