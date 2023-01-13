@@ -13,6 +13,7 @@ import { MyNgForComponent } from './my-ng-for/my-ng-for.component';
 import { MyInputFormatDirective } from './my-input-format.directive';
 import { MyDirectiveComponent } from './my-directive/my-directive.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ZippyComponent } from './zippy/zippy.component';
     MyInputFormatDirective,
     MyDirectiveComponent,
     ZippyComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
