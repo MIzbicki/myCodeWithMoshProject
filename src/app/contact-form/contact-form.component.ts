@@ -12,5 +12,7 @@ export class ContactFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  myLog(tempVar:any){
+    console.log(tempVar);
+  }
 }
