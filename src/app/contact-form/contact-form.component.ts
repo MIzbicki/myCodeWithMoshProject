@@ -12,6 +12,12 @@ export class ContactFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  contactMethods = [
+    { id: 1, name: 'email' },
+    { id: 2, name: 'mobile phone' },
+    { id: 3, name: 'personally' }
+  ]
+
   myLog(tempVar:any){
     console.log(tempVar);
   }
