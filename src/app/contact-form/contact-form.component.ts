@@ -15,4 +15,8 @@ export class ContactFormComponent implements OnInit {
   myLog(tempVar:any){
     console.log(tempVar);
   }
+
+  logSubmit(f:any){
+    console.log(f);
+  }
 }
