@@ -1,0 +1,7 @@
+.form-control.ng-pristine.ng-touched.ng-invalid{
+  border: 5px solid red;
+}
+
+.form-control.ng-touched.ng-invalid.ng-dirty{
+  border: 5px solid red;
+}
