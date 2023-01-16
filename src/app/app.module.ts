@@ -14,6 +14,7 @@ import { MyInputFormatDirective } from './my-input-format.directive';
 import { MyDirectiveComponent } from './my-directive/my-directive.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { UdemyFormComponent } from './udemy-form/udemy-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MyDirectiveComponent,
     ZippyComponent,
     ContactFormComponent,
+    UdemyFormComponent,
   ],
   imports: [
     BrowserModule,
