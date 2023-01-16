@@ -14,7 +14,7 @@ ________________________________________________________________________________
 
     <div class="alert alert-danger" *ngIf="courseName.invalid && courseName.touched">
       <div *ngIf="courseName.errors?.['required']">
-        Course Name is required!
+        Course Name is required.
       </div>
       <div *ngIf="courseName.errors?.['minlength']">
         Course Name must be at least {{courseName.errors?.['minlength'].requiredLength}} characters long.
@@ -28,6 +28,7 @@ ________________________________________________________________________________
     required
     ngModel
     name="category"
+    #category="ngModel"
     type="text"
     id="category"
     class="form-control">
@@ -36,6 +37,9 @@ ________________________________________________________________________________
         {{ item.name }}
       </option>
     </select>
+    <div *ngIf="category.invalid && category.touched" class="alert alert-danger">
+      Category is required.
+    </div>
   </div><br>
 
   <div class="checkbox">
