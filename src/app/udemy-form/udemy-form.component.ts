@@ -12,4 +12,8 @@ export class UdemyFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myLog(form: any){
+    console.log(form);
+  }
+
 }
