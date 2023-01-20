@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -10,8 +10,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class SignupFormComponent {
 
   form = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl()
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+    password: new FormControl('', Validators.required)
   })
 
+  get username() {
+    return this.form.get('username');
+  }
+
+  get minValue(){
+    return this.form.get('username')?.errors?.['minlength'].requiredLength;
+  }
+
+  myLog(x:any)
+  {
+    console.log(x);
+  }
 }
