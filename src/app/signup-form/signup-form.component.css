@@ -1,0 +1,8 @@
+.spinner-border{
+  margin: 10px;
+}
+
+.my-align{
+  display: flex;
+  align-items: center;
+}

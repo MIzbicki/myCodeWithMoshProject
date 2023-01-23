@@ -7,4 +7,20 @@ export class UsernameValidators {
     else
       return null;
   }
+
+  static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      //server request delay simulation
+      setTimeout(() => {
+        if (control.value === 'michal') {
+          resolve({shouldBeUnique: true });
+        }
+        else {
+          resolve(null);
+        }
+      },
+        2000
+      )
+    });
+  }
 }

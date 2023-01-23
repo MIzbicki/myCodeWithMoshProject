@@ -7,6 +7,10 @@
             type="text"
             class="form-control"
             (change)="myLog(username)">
+            <div *ngIf="username?.pending" class="my-align">
+              <span class="spinner-border"></span>
+              <span>Checking for uniqueness ...</span>
+            </div>
             <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
               <div *ngIf="username?.errors?.['required']">
                 Username is required.
@@ -16,6 +20,9 @@
               </div>
               <div *ngIf="username?.errors?.['cannotContainSpace']">
                 Username cannot contain space.
+              </div>
+              <div *ngIf="username?.errors?.['shouldBeUnique']">
+                Username is already taken.
               </div>
             </div>
     </div>

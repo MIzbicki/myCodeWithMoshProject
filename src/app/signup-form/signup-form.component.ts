@@ -15,7 +15,9 @@ export class SignupFormComponent {
       Validators.required,
       Validators.minLength(5),
       UsernameValidators.cannotContainSpace
-    ]),
+    ],
+      UsernameValidators.shouldBeUnique
+    ),
     password: new FormControl('', Validators.required)
   })
 
@@ -23,12 +25,11 @@ export class SignupFormComponent {
     return this.form.get('username');
   }
 
-  get minValue(){
+  get minValue() {
     return this.form.get('username')?.errors?.['minlength'].requiredLength;
   }
 
-  myLog(x:any)
-  {
+  myLog(x: any) {
     console.log(x);
   }
 }
