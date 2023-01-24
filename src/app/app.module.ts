@@ -18,6 +18,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { UdemyFormComponent } from './udemy-form/udemy-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     UdemyFormComponent,
     FormArrayComponent,
     FormBuilderComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
