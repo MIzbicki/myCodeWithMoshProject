@@ -11,7 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class SignupFormComponent {
 
   form = new FormGroup({
-    username: new FormControl('', [
+    username: new FormControl('',
+    [
       Validators.required,
       Validators.minLength(5),
       UsernameValidators.cannotContainSpace
@@ -31,5 +32,13 @@ export class SignupFormComponent {
 
   myLog(x: any) {
     console.log(x);
+  }
+
+  myLogin(){
+    //let isValid = authService.login(this.form.value)
+    this.form.setErrors({
+      invalidLogin: true
+    });
+
   }
 }
