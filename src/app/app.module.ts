@@ -1,7 +1,8 @@
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { MyPipe } from './myPipe.pipe';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AwardComponent } from './award/award.component';
 import { MyTitleCaseComponent } from './my-title-case/my-title-case.component';
@@ -28,6 +29,7 @@ import { UdemyFormComponent } from './udemy-form/udemy-form.component';
     NavNgSwitchComponent,
     MyNgForComponent,
     MyInputFormatDirective,
+    SignupFormComponent,
     MyDirectiveComponent,
     ZippyComponent,
     ContactFormComponent,
@@ -35,7 +37,8 @@ import { UdemyFormComponent } from './udemy-form/udemy-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

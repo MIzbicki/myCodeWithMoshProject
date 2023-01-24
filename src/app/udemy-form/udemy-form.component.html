@@ -1,5 +1,5 @@
 ___________________________________________________________________________________________
-<form #myForm="ngForm" (ngSubmit)="myLog(myForm)">
+<form #myForm="ngForm" (ngSubmit)="myLog(myForm.value)">
   <div class="form-group">
     <label for="courseName">Course Name</label>
     <input
