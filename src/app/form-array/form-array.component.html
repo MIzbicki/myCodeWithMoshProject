@@ -1,0 +1,17 @@
+<p>form-array works!</p>
+<form>
+  <input
+  class="form-control"
+  type="text"
+  #topic
+  (keyup.enter)="addTopic(topic) "
+  >
+  <ul class="list-group">
+    <li *ngFor="let topic of topics.controls"
+    class="list-group-item"
+    (click)="removeElement(topic)"
+    >
+      {{ topic.value }}
+    </li>
+  </ul>
+</form>
