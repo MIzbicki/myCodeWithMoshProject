@@ -16,6 +16,7 @@ import { MyDirectiveComponent } from './my-directive/my-directive.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { UdemyFormComponent } from './udemy-form/udemy-form.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UdemyFormComponent } from './udemy-form/udemy-form.component';
     ZippyComponent,
     ContactFormComponent,
     UdemyFormComponent,
+    FormArrayComponent,
   ],
   imports: [
     BrowserModule,
