@@ -1,4 +1,4 @@
-import { myValidators } from './old-password.validators';
+import { myValidators } from './my-password.validators';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -17,17 +17,21 @@ export class ChangePasswordComponent implements OnInit {
   form = new FormGroup({
     oldPassword: new FormControl('', Validators.required, myValidators.validateOldPassword),
     newPassword: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required)
+    confirmPassword: new FormControl('',
+      [
+        Validators.required,
+        //myValidators.comparePasswords(this.newPassword?.value, this.confirmPassword?.value)
+      ])
   })
 
-  get oldPassword(){
+  get oldPassword() {
     return this.form.get('oldPassword');
   }
 
-  get newPassword(){
+  get newPassword() {
     return this.form.get('newPassword');
   }
-  get confirmPassword(){
+  get confirmPassword() {
     return this.form.get('confirmPassword');
   }
 

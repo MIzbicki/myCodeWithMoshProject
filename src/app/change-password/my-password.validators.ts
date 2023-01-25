@@ -18,4 +18,13 @@ export class myValidators {
     })
   }
 
+  //static comparePasswords(newPassword: AbstractControl, confirmPassword: AbstractControl): ValidationErrors | null{
+  static comparePasswords(newPassword: any, confirmPassword: any): ValidationErrors | null{
+    let valueNewPassword = (newPassword.value as string);
+    let valueConfirmPassword = (confirmPassword.value as string);
+    console.log("New Password: " + valueNewPassword);
+    console.log("Confirmed Password: " + valueConfirmPassword);
+    return null;
+  }
+
 }
