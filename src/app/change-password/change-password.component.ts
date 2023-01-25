@@ -1,3 +1,4 @@
+import { myValidators } from './old-password.validators';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -14,7 +15,7 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   form = new FormGroup({
-    oldPassword: new FormControl('', Validators.required),
+    oldPassword: new FormControl('', Validators.required, myValidators.validateOldPassword),
     newPassword: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   })

@@ -13,7 +13,7 @@ export class UsernameValidators {
       //server request delay simulation
       setTimeout(() => {
         if (control.value === 'michal') {
-          resolve({shouldBeUnique: true });
+          resolve({ shouldBeUnique: true });
         }
         else {
           resolve(null);
