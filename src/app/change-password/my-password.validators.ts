@@ -3,8 +3,8 @@ import { AbstractControl } from '@angular/forms';
 
 
 export class myValidators {
-  static validateOldPassword(control: AbstractControl): Promise<ValidationErrors|null> {
-    return new Promise((resolve, reject) =>{
+  static validateOldPassword(control: AbstractControl): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (control.value != '1234') {
           resolve({ oldPasswordIsWrong: true });
@@ -19,6 +19,7 @@ export class myValidators {
   }
 
   //static comparePasswords(newPassword: AbstractControl, confirmPassword: AbstractControl): ValidationErrors | null{
+  /*
   static comparePasswords(newPassword: any, confirmPassword: any): ValidationErrors | null{
     let valueNewPassword = (newPassword.value as string);
     let valueConfirmPassword = (confirmPassword.value as string);
@@ -26,5 +27,17 @@ export class myValidators {
     console.log("Confirmed Password: " + valueConfirmPassword);
     return null;
   }
+  */
 
+  static comparePasswords(control: AbstractControl): ValidationErrors|null{
+    let newPassword = control.get('newPassword')?.value;
+    let confirmPassword = control.get('confirmPassword')?.value;
+    if( newPassword != confirmPassword)
+    {
+      return { differentPasswords: true };
+    }else
+    {
+      return null;
+    }
+  }
 }

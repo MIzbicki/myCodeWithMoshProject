@@ -22,7 +22,7 @@ export class ChangePasswordComponent implements OnInit {
         Validators.required,
         //myValidators.comparePasswords(this.newPassword?.value, this.confirmPassword?.value)
       ])
-  })
+  }, myValidators.comparePasswords);
 
   get oldPassword() {
     return this.form.get('oldPassword');
