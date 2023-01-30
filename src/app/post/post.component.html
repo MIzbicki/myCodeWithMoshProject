@@ -1,16 +1,21 @@
 <input
-#myInput
-(keyup.enter)="addToList(myInput)"
-type="text"
-class="form-control"
->
+  #myInput
+  (keyup.enter)="addToList(myInput)"
+  type="text"
+  class="form-control">
 <br>
 <ol class="list-group" type='1'>
   <li class="list-group-item"
-  *ngFor="let post of posts">
-  <button class="btn btn-primary btn-sm"
-  (click)="updatePost(post)"
-  >Update</button>
+    *ngFor="let post of posts">
+    <button class="btn btn-primary btn-sm"
+      (click)="updatePost(post)">
+      Update
+    </button>
+
+    <button class="btn btn-primary btn-sm"
+      (click)="deletePost(post)">
+      Delete
+    </button>
     {{ post.id + ". " + post.title }}
   </li>
 </ol>

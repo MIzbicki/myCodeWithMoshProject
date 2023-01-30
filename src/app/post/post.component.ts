@@ -71,4 +71,12 @@ export class PostComponent{
       console.log("PUT: ", response);
     });
   }
+
+  deletePost(post:any){
+    this.http.delete(this.url + "/" + post.id)
+    .subscribe(response =>{
+      let index = this.posts.indexOf(post);
+      this.posts.splice(index,1);
+    });
+  }
 }
