@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { MyPipe } from './myPipe.pipe';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,8 @@ import { UdemyFormComponent } from './udemy-form/udemy-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PostComponent } from './post/post.component';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +43,11 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     FormArrayComponent,
     FormBuilderComponent,
     ChangePasswordComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],

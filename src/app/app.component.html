@@ -20,6 +20,7 @@
     </a>
   </li>
 </ul>
+<br>
 
 <div [ngSwitch]="viewMode">
   <div *ngSwitchCase="'Part 1'">
@@ -147,6 +148,8 @@
 
   </div>
   <div *ngSwitchCase="'Part 2'">
-    Part 2 View
+    <app-post>
+
+    </app-post>
   </div>
 </div>
