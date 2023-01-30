@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent{
 
   posts: any = [];
   private url = 'https://jsonplaceholder.typicode.com/posts';
@@ -17,22 +17,8 @@ export class PostComponent implements OnInit {
     http.get(this.url)
     .subscribe(response => {
       this.posts = response;
-      console.log(typeof response);
     });
   }
-
-  addToList(myInput: any){
-    let post = { title: myInput.value };
-    myInput.value='';
-
-    this.http.post(this.url, post)
-    .subscribe(response => {
-      console.log(response);
-      this.posts.splice(0,0, response);
-    });
-
-  }
-
 
   /*
   //works correctly
@@ -59,10 +45,30 @@ export class PostComponent implements OnInit {
       });
   }*/
 
+  addToList(myInput: any){
+    let post = { title: myInput.value };
+    myInput.value='';
 
-
-  ngOnInit(): void {
+    this.http.post(this.url, post)
+    .subscribe(response => {
+      console.log("POST: ", response);
+      this.posts.splice(0,0, response);
+    });
   }
 
+  updatePost(post: any){
+    /*
+    //patch update only few fields of the object
+    this.http.patch(this.url + "/" + post.id, JSON.stringify({isRead: true}))
+    .subscribe( response => {
+      console.log("PATCH: ", response);
+    });
+    */
 
+    //put updates all object
+    this.http.put(this.url + "/" + post.id, JSON.stringify(post))
+    .subscribe(response =>{
+      console.log("PUT: ", response);
+    });
+  }
 }
