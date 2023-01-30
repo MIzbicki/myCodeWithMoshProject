@@ -8,6 +8,13 @@ import { MyAwardChangedEventArgs } from './award/award.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  viewMode: string = 'Part 2';
+
+  onNavClick(vMode: string){
+    this.viewMode = vMode;
+  }
+
+
   title1 = 'angular-data-interpolation';
   title2 = 'angular-property-binding';
 

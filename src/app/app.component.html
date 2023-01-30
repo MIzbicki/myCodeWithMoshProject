@@ -1,11 +1,35 @@
-<h2>TEST</h2>
-<h3>{{ title1 }}</h3>
-<!--<img src=" {{ imgURL }}" /> <!-- data interpolation -->
-<br><br>
-<h3 [textContent]="title2"></h3>
-<!--<img [src]="imgURL" /> <!-- one way property binding -->
+<h1>
+  Angular course - code with Mosh
+</h1>
 
-<!--
+<ul class="nav nav-pills">
+  <li class="nav-item"
+  (click)="onNavClick('Part 1')"
+  >
+    <a href="#a" class="nav-link"
+      [class.active]="viewMode == 'Part 1'">
+      Part 1
+    </a>
+  </li>
+  <li class="nav-item"
+  (click)="onNavClick('Part 2')"
+  >
+    <a href="#a" class="nav-link"
+      [class.active]="viewMode == 'Part 2'">
+      Part 2
+    </a>
+  </li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'Part 1'">
+    <h3>{{ title1 }}</h3>
+    <!--<img src=" {{ imgURL }}" /> <!-- data interpolation -->
+    <br><br>
+    <h3 [textContent]="title2"></h3>
+    <!--<img [src]="imgURL" /> <!-- one way property binding -->
+
+    <!--
 <table>
   <tr>
     <td>
@@ -25,99 +49,104 @@
   </tr>
 </table>
 -->
+    <br>
+    <table>
+      <tr>
+        <td [attr.colspan]="colSpan"></td><!-- colspan is unknown attribute of DOM, so we have to create this attribute adding attr.xxx -->
+      </tr>
+    </table>
+    <br>
+    <button class="btn btn-primary" [class.active]="isActiveButton">Test</button>
+    <!--                             class binding   -->
+    <br><br>
+    <span [style.background]="isActiveSpan ? 'blue' : 'yellow'">Lorem Ipsum
+      Lorem
+      Ipsum Lorem Ipsum</span>
+    <!--   style binding   -->
 
-<br>
-<table>
-  <tr>
-    <td [attr.colspan] = "colSpan"></td><!-- colspan is unknown attribute of DOM, so we have to create this attribute adding attr.xxx -->
-  </tr>
-</table>
-<br>
-<button class="btn btn-primary" [class.active]="isActiveButton">Test</button>
-<!--                             class binding   -->
-<br><br>
-<span [style.background]="isActiveSpan ? 'blue' : 'yellow'">Lorem Ipsum Lorem Ipsum Lorem Ipsum</span>
-<!--   style binding   -->
+    <br>
 
-<br>
+    <!-- to event binding we use () -->
+    <div (click)="onDivClicked()">
+      <button (click)="onSave($event)">Save</button>
+    </div><br>
 
-<!-- to event binding we use () -->
-<div (click)="onDivClicked()">
-  <button (click)="onSave($event)">Save</button>
-</div><br>
+    <!-- event filtering -->
+    Event filtering<br>
+    <input (keyup.enter)="enterPressed()"/><br><br>
 
-<!-- event filtering -->
-Event filtering<br>
-<input (keyup.enter)="enterPressed()"/><br><br>
+    Getting value from input<br>
+    <input #email (keyup.enter)="takeValueFromInput(email.value)" /><br><br>
+    <!-- but we don't should implement this like that -->
 
-Getting value from input<br>
-<input #email (keyup.enter)="takeValueFromInput(email.value)" /><br><br>
-<!-- but we don't should implement this like that -->
-
-<!-- instead we should use two-way binding:-->
-Two-way binding<br>
-<input [(ngModel)]="email2" (keyup.enter)="onKeyUp()"/><br><br>
+    <!-- instead we should use two-way binding:-->
+    Two-way binding<br>
+    <input [(ngModel)]="email2" (keyup.enter)="onKeyUp()"/><br><br>
 
 
-Build-in Pipes:<br>
-Title: {{course.title | lowercase | uppercase }}<br>
-Rating: {{course.rating | number:'1.1-1'}}<br>
-Students: {{course.students | number}}<br>
-Price: {{course.price | currency: 'USD':true:'1.2-2'}}<br>
-Release date: {{course.releaseDate | date: 'dd/MM/yyyy'}}<br><br>
+    Build-in Pipes:<br>
+    Title: {{course.title | lowercase | uppercase }}<br>
+    Rating: {{course.rating | number:'1.1-1'}}<br>
+    Students: {{course.students | number}}<br>
+    Price: {{course.price | currency: 'USD':true:'1.2-2'}}<br>
+    Release date: {{course.releaseDate | date: 'dd/MM/yyyy'}}<br><br>
 
-Custom pipes:<br>
-{{longText | myPipe: 150}}
+    Custom pipes:<br>
+    {{longText | myPipe: 150}}
 
-<br><br>
-<app-award></app-award>
-<app-my-title-case></app-my-title-case>
-<br><br><br><br>
+    <br><br>
+    <app-award></app-award>
+    <app-my-title-case></app-my-title-case>
+    <br><br><br><br>
 
-<p>Input-output component properties</p>
-<app-award [award]="post.isAchieve" (change)="onAwardChanged($event)"></app-award>
-<!--        isAward - is public property of the award component -->
+    <p>Input-output component properties</p>
+    <app-award [award]="post.isAchieve" (change)="onAwardChanged($event)"></app-award>
+    <!--        isAward - is public property of the award component -->
+    <app-bootstrap-panel>
+      <div class="heading">Test 1</div>
+      <div class="body">Test 2</div>
+      <div class="footer">Test 3</div>
+    </app-bootstrap-panel>
+    <br><br>
 
-<app-bootstrap-panel>
-  <div class="heading">Test 1</div>
-  <div class="body">Test 2</div>
-  <div class="footer">Test 3</div>
-</app-bootstrap-panel>
-<br><br>
+    <app-twitter-like
+      [twitterTitle]="twitterPost.title"
+      [isLiked]="twitterPost.isLiked"
+      [likesNumber]="twitterPost.likesNumber"></app-twitter-like>
 
-<app-twitter-like
-[twitterTitle]="twitterPost.title"
-[isLiked]="twitterPost.isLiked"
-[likesNumber]="twitterPost.likesNumber"
-></app-twitter-like>
+    <br><br><br>
+    ngIf
+    <div *ngIf="true">This is div 1 </div>
+    <div *ngIf="false">This is div 2 </div>
 
-<br><br><br>
-ngIf
-<div *ngIf="true">This is div 1 </div>
-<div *ngIf="false">This is div 2 </div>
+    <br><br><br>
+    <app-nav-ng-switch></app-nav-ng-switch>
+    <br><br><br>
+    <app-my-ng-for></app-my-ng-for>
+    <br><br><br>
+    <app-my-directive></app-my-directive>
+    <br><br><br>
+    <app-zippy title="My first zippy component">
+      <div class="innerText">Inner text first zippy component</div>
+    </app-zippy><br>
+    <app-zippy title="My second zippy component">
+      <div class="innerText">Inner text second zippy component</div>
+    </app-zippy>
+    <br><br><br>
+    <app-contact-form></app-contact-form>
+    <br><br><br>
+    <app-udemy-form></app-udemy-form>
+    <br><br><br>
+    <!-- reactive forms validation \/ -->
+    <signup-form></signup-form>
+    <br><br><br>
+    <!-- \/ forms array -->
+    <app-form-array></app-form-array>
+    <br><br><br>
+    <app-change-password></app-change-password>
 
-<br><br><br>
-<app-nav-ng-switch></app-nav-ng-switch>
-<br><br><br>
-<app-my-ng-for></app-my-ng-for>
-<br><br><br>
-<app-my-directive></app-my-directive>
-<br><br><br>
-<app-zippy title="My first zippy component">
-  <div class="innerText">Inner text first zippy component</div>
-</app-zippy><br>
-<app-zippy title="My second zippy component">
-  <div class="innerText">Inner text second zippy component</div>
-</app-zippy>
-<br><br><br>
-<app-contact-form></app-contact-form>
-<br><br><br>
-<app-udemy-form></app-udemy-form>
-<br><br><br>
-<!-- reactive forms validation \/ -->
-<signup-form></signup-form>
-<br><br><br>
-<!-- \/ forms array -->
-<app-form-array></app-form-array>
-<br><br><br>
-<app-change-password></app-change-password>
+  </div>
+  <div *ngSwitchCase="'Part 2'">
+    Part 2 View
+  </div>
+</div>
