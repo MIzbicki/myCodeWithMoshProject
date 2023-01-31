@@ -1,20 +1,21 @@
-import { ValidationErrors } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent{
+export class PostComponent implements OnInit{
 
   posts: any = [];
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient){
-    http.get(this.url)
+  constructor(private service: PostService){
+  }
+
+  ngOnInit(): void {
+    this.service.getPosts()
     .subscribe(response => {
       this.posts = response;
     });
@@ -49,7 +50,7 @@ export class PostComponent{
     let post = { title: myInput.value };
     myInput.value='';
 
-    this.http.post(this.url, post)
+    this.service.addToList(post)
     .subscribe(response => {
       console.log("POST: ", response);
       this.posts.splice(0,0, response);
@@ -57,23 +58,15 @@ export class PostComponent{
   }
 
   updatePost(post: any){
-    /*
-    //patch update only few fields of the object
-    this.http.patch(this.url + "/" + post.id, JSON.stringify({isRead: true}))
-    .subscribe( response => {
-      console.log("PATCH: ", response);
-    });
-    */
-
     //put updates all object
-    this.http.put(this.url + "/" + post.id, JSON.stringify(post))
+    this.service.updatePost(post)
     .subscribe(response =>{
       console.log("PUT: ", response);
     });
   }
 
   deletePost(post:any){
-    this.http.delete(this.url + "/" + post.id)
+    this.service.deletePost(post)
     .subscribe(response =>{
       let index = this.posts.indexOf(post);
       this.posts.splice(index,1);
