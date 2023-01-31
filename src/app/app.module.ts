@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { MyPipe } from './myPipes/myPipe.pipe';
@@ -51,7 +52,9 @@ import { PostComponent } from './post/post.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
