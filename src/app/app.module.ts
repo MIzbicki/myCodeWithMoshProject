@@ -22,6 +22,7 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostComponent } from './post/post.component';
+import { MyFollowersComponent } from './my-followers/my-followers.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PostComponent } from './post/post.component';
     FormBuilderComponent,
     ChangePasswordComponent,
     PostComponent,
+    MyFollowersComponent,
   ],
   imports: [
     BrowserModule,
