@@ -11,7 +11,11 @@ export class PostService {
 
   }
 
+  //correct url
   private url = 'https://jsonplaceholder.typicode.com/posts';
+
+  //wrong url - to tests
+  private wrong_url = 'https://wrongurl.com/posts';
 
   getPosts(){
     return this.http.get(this.url);

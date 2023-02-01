@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class PostComponent implements OnInit{
 
   posts: any = [];
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private service: PostService){
   }
@@ -18,6 +17,9 @@ export class PostComponent implements OnInit{
     this.service.getPosts()
     .subscribe(response => {
       this.posts = response;
+    }, error => {
+      alert('An unexpected error occurred.');
+      console.log(error);
     });
   }
 
@@ -54,6 +56,9 @@ export class PostComponent implements OnInit{
     .subscribe(response => {
       console.log("POST: ", response);
       this.posts.splice(0,0, response);
+    }, error => {
+      alert('An unexpected error occurred.');
+      console.log(error);
     });
   }
 
@@ -62,6 +67,9 @@ export class PostComponent implements OnInit{
     this.service.updatePost(post)
     .subscribe(response =>{
       console.log("PUT: ", response);
+    }, error => {
+      alert('An unexpected error occurred.');
+      console.log(error);
     });
   }
 
@@ -70,6 +78,9 @@ export class PostComponent implements OnInit{
     .subscribe(response =>{
       let index = this.posts.indexOf(post);
       this.posts.splice(index,1);
+    }, error => {
+      alert('An unexpected error occurred.');
+      console.log(error);
     });
   }
 }
