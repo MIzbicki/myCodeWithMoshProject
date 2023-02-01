@@ -80,7 +80,7 @@ export class PostComponent implements OnInit {
           let index = this.posts.indexOf(post);
           this.posts.splice(index, 1);
         },
-        (error: Response) => {
+        /*(error: Response) => {
           if (error.status === 404) {
             alert('This post has already been deleted.');
           }
@@ -88,6 +88,6 @@ export class PostComponent implements OnInit {
             alert('An unexpected error occurred.');
             console.log(error);
           }
-        });
+        }*/);
   }
 }
