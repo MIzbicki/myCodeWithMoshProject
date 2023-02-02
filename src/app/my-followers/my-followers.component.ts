@@ -15,6 +15,7 @@ export class MyFollowersComponent implements OnInit {
     this.service.getFollowers().subscribe(
       response => {
         this.followers = response;
+        console.log(this.followers);
       })
   }
 }
