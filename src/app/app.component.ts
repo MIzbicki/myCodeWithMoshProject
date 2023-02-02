@@ -8,7 +8,7 @@ import { MyAwardChangedEventArgs } from './award/award.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  viewMode: string = 'Part 2';
+  viewMode: string = 'Part 3';
 
   onNavClick(vMode: string){
     this.viewMode = vMode;

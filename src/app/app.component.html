@@ -17,6 +17,13 @@
       Part 2
     </a>
   </li>
+  <li class="nav-item"
+    (click)="onNavClick('Part 3')">
+    <a href="#a" class="nav-link"
+      [class.active]="viewMode == 'Part 3'">
+      Part 3
+    </a>
+  </li>
 </ul>
 <br>
 
@@ -149,5 +156,8 @@
     <app-post>
 
     </app-post>
+  </div>
+  <div *ngSwitchCase="'Part 3'">
+    <my-followers></my-followers>
   </div>
 </div>

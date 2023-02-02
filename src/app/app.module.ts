@@ -1,3 +1,4 @@
+import { MyFollowersService } from './services/my-followers.service';
 import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -22,6 +23,7 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostComponent } from './post/post.component';
+import { MyFollowersComponent } from './my-followers/my-followers.component';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { PostComponent } from './post/post.component';
     FormBuilderComponent,
     ChangePasswordComponent,
     PostComponent,
+    MyFollowersComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { PostComponent } from './post/post.component';
     ReactiveFormsModule
   ],
   providers: [
-    PostService
+    PostService,
+    MyFollowersService
   ],
   bootstrap: [AppComponent]
 })
