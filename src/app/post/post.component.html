@@ -4,7 +4,7 @@
   type="text"
   class="form-control">
 <br>
-<ol class="list-group" type='1'>
+<ul class="list-group" type='1'>
   <li class="list-group-item"
     *ngFor="let post of posts">
     <button class="btn btn-primary btn-sm button-update"
@@ -18,4 +18,4 @@
     </button>
     {{ post.id + ". " + post.title }}
   </li>
-</ol>
+</ul>

@@ -12,5 +12,8 @@ export class MyFollowersService {
 
   url: string = "https://api.github.com/users/mosh-hamedani/followers";
 
+  getFollowers(){
+    return this.http.get(this.url);
+  }
 
 }

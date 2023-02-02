@@ -1,3 +1,4 @@
+import { MyFollowersService } from './services/my-followers.service';
 import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -55,7 +56,8 @@ import { MyFollowersComponent } from './my-followers/my-followers.component';
     ReactiveFormsModule
   ],
   providers: [
-    PostService
+    PostService,
+    MyFollowersService
   ],
   bootstrap: [AppComponent]
 })
