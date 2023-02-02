@@ -1,9 +1,10 @@
+import { MyAppErrorHandler } from './my-errors-handler/app-error-handler';
 import { MyFollowersService } from './services/my-followers.service';
 import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { MyPipe } from './myPipes/myPipe.pipe';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -57,7 +58,8 @@ import { MyFollowersComponent } from './my-followers/my-followers.component';
   ],
   providers: [
     PostService,
-    MyFollowersService
+    MyFollowersService,
+    {provide: ErrorHandler, useClass: MyAppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })

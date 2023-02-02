@@ -18,15 +18,21 @@ export class PostService {
   //wrong url - to tests
   private wrong_url = 'https://wrongurl.com/posts';
 
-  getPosts(){
-    return this.http.get(this.url);
+  getPosts() {
+    return this.http.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
-  addToList(post: any){
-    return  this.http.post(this.url, post);
+  addToList(post: any) {
+    return this.http.post(this.url, post)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
-  updatePost(post: any){
+  updatePost(post: any) {
     /*
     //patch update only few fields of the object
     this.http.patch(this.url + "/" + post.id, JSON.stringify({isRead: true}))
@@ -36,19 +42,24 @@ export class PostService {
     */
 
     //put updates all object
-    return this.http.put(this.url + "/" + post.id, JSON.stringify(post));
+    return this.http.put(this.url + "/" + post.id, JSON.stringify(post))
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
-  deletePost(id: number){
-    return this.http.delete(this.wrong_url + "/" + id).pipe(
-      catchError(this.handleError)
-    );
+  deletePost(id: number) {
+    return this.http.delete(this.url + "/" + id)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
+  //Me: default global handler is MyAppErrorHandler, because I change it in app.module.ts ({provide: ErrorHandler, useClass: MyAppErrorHandler})
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error);
+      console.error('error.status === 0  ', error.error);
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
