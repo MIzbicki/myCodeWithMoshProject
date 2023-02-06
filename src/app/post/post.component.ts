@@ -14,13 +14,18 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getPosts()
-      .subscribe(response => {
-        this.posts = response;
-      }, error => {
-        alert('An unexpected error occurred.');
-        console.log(error);
-      });
+    this.service.getAll()
+      .subscribe(
+        response => {
+          this.posts = response;
+        },
+        //in this place if error occurred it is throwing on Global error handler ( throw error; )
+        /*
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+        }*/
+      );
   }
 
   /*
@@ -52,29 +57,33 @@ export class PostComponent implements OnInit {
     let post = { title: myInput.value };
     myInput.value = '';
 
-    this.service.addToList(post)
+    this.service.create(post)
       .subscribe(response => {
         console.log("POST: ", response);
         this.posts.splice(0, 0, response);
-      }, error => {
+      },
+      /*error => {
         alert('An unexpected error occurred.');
         console.log(error);
-      });
+      }*/);
   }
 
   updatePost(post: any) {
     //put updates all object
-    this.service.updatePost(post)
+    this.service.update(post)
       .subscribe(response => {
         console.log("PUT: ", response);
-      }, error => {
+      },
+      /*
+      error => {
         alert('An unexpected error occurred.');
         console.log(error);
-      });
+      }*/
+      );
   }
 
   deletePost(post: any) {
-    this.service.deletePost(post.id)
+    this.service.delete(post.id)
       .subscribe(
         response => {
           let index = this.posts.indexOf(post);
@@ -84,10 +93,8 @@ export class PostComponent implements OnInit {
           if (error.status === 404) {
             alert('This post has already been deleted.');
           }
-          else {
-            alert('An unexpected error occurred.');
-            console.log(error);
-          }
+          else
+            throw error;
         }*/);
   }
 }
